@@ -1,2 +1,2 @@
 # AlgosAndDS
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
+Collection of personal solutions for coding, alrogrithms and data staructures questions!
