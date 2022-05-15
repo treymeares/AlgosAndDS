@@ -6,16 +6,13 @@ class Solution(object):
         :rtype: List[List[str]]
         """
         seen = {}
-        for s in strs:
-            letters = list(s)
-            letters.sort()
-            label = "".join(letters)
-            if label not in seen:
-                seen[label] = [s]
+        for words in strs:
+            x = "".join(sorted(words))
+            if x not in seen:
+                seen[x] = [words]
             else:
-                seen[label].append(s)
-            
-        return [grp for grp in seen.values()]    
+                seen[x].append(words)
+        return list(seen.values())   
             
         
         
