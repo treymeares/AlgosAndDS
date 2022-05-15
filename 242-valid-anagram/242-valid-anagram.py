@@ -11,4 +11,3 @@ class Solution(object):
             if s.count(letter) != t.count(letter):
                 return False
         return True
-        
