@@ -6,10 +6,9 @@ class Solution(object):
         :rtype: List[int]
         """
         seen = {}
-        for idx, number in enumerate(nums):
-            match = target - number
+        for idx, x in enumerate(nums):
+            match = target - x
             if match in seen:
                 return [idx, seen[match]]
-            seen[number] = idx
+            seen[x] = idx
         return []
-        
