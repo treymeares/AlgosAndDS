@@ -1,6 +1,5 @@
 class Solution:
-    def isHappy(self, n: int) -> bool:
-        
+    def isHappy(self, n: int) -> bool:      
         seen = set()
         while n != 1:
             #make n run into itself if there is a endless loop
