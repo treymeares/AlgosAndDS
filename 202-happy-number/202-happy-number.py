@@ -1,11 +1,11 @@
 class Solution:
     def isHappy(self, n: int) -> bool:
-        mem = set()
+        seen = set()
         while n != 1:
             n = sum([int(i) * int(i) for i in str(n)])
-            if n in mem:
+            if n in seen:
                 return False
             else:
-                mem.add(n)
+                seen.add(n)
         else:
             return True
