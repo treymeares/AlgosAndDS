@@ -14,10 +14,10 @@ class Solution(object):
             match = square * square
             if match == num:
                 return True
-            elif match < num:
-                left = square + 1
-            else:
+            elif match > num:
                 right = square - 1
+            else:
+                left = square + 1
                 
         return False
     
