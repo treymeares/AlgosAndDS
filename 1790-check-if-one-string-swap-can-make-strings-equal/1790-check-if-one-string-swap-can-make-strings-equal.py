@@ -12,6 +12,5 @@ class Solution(object):
         for x in range(len(s1)):
             if s1[x] != s2[x]:
                 difference += 1
-        if difference > 2:
-            return False
-        return True
+                
+        return difference <= 2
