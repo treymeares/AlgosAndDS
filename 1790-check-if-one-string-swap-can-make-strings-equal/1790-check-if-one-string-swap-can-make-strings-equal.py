@@ -5,19 +5,13 @@ class Solution(object):
         :type s2: str
         :rtype: bool
         """
-        count = 0
-        
         if sorted(s1) != sorted(s2):
             return False
+        difference = 0
         
         for x in range(len(s1)):
-            if s1[x] == s2[x]:
-                count += 1
-        if count >= len(s1) - 2:
-            return True
-        else:
+            if s1[x] != s2[x]:
+                difference += 1
+        if difference > 2:
             return False
-            
-        
-        
-        
+        return True
