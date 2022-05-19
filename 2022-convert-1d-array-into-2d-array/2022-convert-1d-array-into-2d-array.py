@@ -1,11 +1,11 @@
 class Solution:
     def construct2DArray(self, original: List[int], m: int, n: int) -> List[List[int]]:
-        q = []
-        if m*n != len(original):
+        result = []
+        if len(original) != m*n:
             return []
-        for i in range(0, len(original), n):
-            q.append(original[i:i+n])       
-        return q
+        for x in range(0, len(original), n):
+            result.append(original[x:x+n])
+        return result
             
         
         
