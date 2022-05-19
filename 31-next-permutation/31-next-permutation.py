@@ -1,17 +1,28 @@
 class Solution:
-    def nextPermutation(self, nums):
-        i = j = len(nums)-1
-        while i > 0 and nums[i-1] >= nums[i]:
-            i -= 1
-        if i == 0:   # nums are in descending order
+    def nextPermutation(self, nums: List[int]) -> None:
+        L = len(nums)
+        for i in reversed(range(L - 1)):
+            # Search
+            cand = -1
+            for j in range(i + 1, L):
+                if nums[j] > nums[i]:
+                    if cand < 0 or nums[j] < nums[cand]: cand = j
+            if cand < 0: 
+                continue
+
+            # Swap
+            nums[i], nums[cand] = nums[cand], nums[i]
+                        
+            # Insertion sort
+            j = i + 2
+            while j < L:
+                k = j
+                while k - 1 > i and nums[k - 1] > nums[k]:
+                    nums[k - 1], nums[k] = nums[k], nums[k - 1]
+                    k -= 1
+                
+                j += 1
+
+            break
+        else:
             nums.reverse()
-            return 
-        k = i - 1    # find the last "ascending" position
-        while nums[j] <= nums[k]:
-            j -= 1
-        nums[k], nums[j] = nums[j], nums[k]  
-        l, r = k+1, len(nums)-1  # reverse the second part
-        while l < r:
-            nums[l], nums[r] = nums[r], nums[l]
-            l +=1 ; r -= 1
-        
