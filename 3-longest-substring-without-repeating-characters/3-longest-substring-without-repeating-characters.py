@@ -1,3 +1,19 @@
+# class Solution:
+#     def lengthOfLongestSubstring(self, s: str) -> int:
+#         result = []
+#         string = ""
+#         for idx, x in enumerate(s):
+#             if x not in string:
+#                 string += x
+#             else:
+#                 result.append(string)
+#                 string = string[idx + 1:]
+#                 string += x
+#         result.append(string)
+#         return len(max(result, key = len))
+    
+    
+    
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         max_s = []
@@ -14,4 +30,3 @@ class Solution:
         max_s.append(tmp_s)
         
         return len(max(max_s, key=len))
-        
