@@ -1,9 +1,12 @@
 class Solution:
     def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
-        flat = sum(mat, [])
+        flat = [num for inner in mat for num in inner]
         if len(flat) != r * c:
             return mat
-        result = zip(*([iter(flat)] * c))
-        return map(list, result)
-
+        index = 0
+        result = []
+        for i in range(0, r):
+            result.append(flat[index:index+c])
+            index += c
+        return result
         
