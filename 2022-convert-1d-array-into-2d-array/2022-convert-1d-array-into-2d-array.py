@@ -6,6 +6,3 @@ class Solution:
         for x in range(0, len(original), n):
             result.append(original[x:x+n])
         return result
-            
-        
-        
