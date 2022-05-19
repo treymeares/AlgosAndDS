@@ -3,6 +3,7 @@ class Solution:
         flat = sum(mat, [])
         if len(flat) != r * c:
             return mat
-        tuples = zip(*([iter(flat)] * c))
-        return map(list, tuples)
+        result = zip(*([iter(flat)] * c))
+        return map(list, result)
+
         
