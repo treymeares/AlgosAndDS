@@ -7,16 +7,17 @@ class Node:
         self.right = right
         self.next = next
 """
-
 class Solution:
-    def connect(self, root):
-        if not root or not root.left:
-            return root
-    
-        root.left.next = root.right
-        root.right.next = None if root.next is None else root.next.left
-    
-        self.connect(root.left)
-        self.connect(root.right)
-    
+    def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
+        curr, nxt = root, root.left if root else None
+        
+        while curr and nxt:
+            curr.left.next = curr.right
+            
+            if curr.next:
+                curr.right.next = curr.next.left
+            curr = curr.next
+            if not curr:
+                curr = nxt
+                nxt = curr.left
         return root
