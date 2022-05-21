@@ -1,9 +1,12 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        queue,opened = [],{'(':')','[':']','{':'}'}
-        for i in s:
-            if i in opened:queue.append(i)
-            else:
-                if not queue or i != opened[queue.pop()]:return False
-                
-        return not queue
+        brackets = {")":"(","]":"[","}":"{"}
+        stack = []
+        for c in s:
+            if c not in brackets: stack.append(c)
+            elif stack:
+                top = stack.pop()
+                if brackets[c] == top: continue
+                else: return False
+            else: return False
+        return stack == []
