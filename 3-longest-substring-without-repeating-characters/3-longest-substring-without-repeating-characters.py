@@ -1,9 +1,10 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        maxSize = l = 0
+        maxSize = 0
+        l = 0
         window = {}
-        for r, char in enumerate(s):
+        for right, char in enumerate(s):
             l = window[char] + 1 if char in window and window[char] >= l else l
-            window[char] = r
-            maxSize = max(maxSize, r - l + 1)
+            window[char] = right
+            maxSize = max(maxSize, right - l + 1)
         return maxSize
