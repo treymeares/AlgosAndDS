@@ -1,15 +1,15 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        close_to_open = {")": "(", "}": "{", "]": "["}
         stack = []
-
-        for c in s:
-            if c in "({[":
-                stack.append(c)
-            # Close bracket
-            else:
-                if stack and stack[-1] == close_to_open[c]:
+        hashmap = {")":"(","]":"[","}":"{"}
+        
+        for i in s:
+            if i in hashmap:
+                if stack and stack[-1] == hashmap[i]:
                     stack.pop()
                 else:
                     return False
-        return stack == []
+            else:
+                stack.append(i)
+                
+        return not stack
