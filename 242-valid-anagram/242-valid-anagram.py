@@ -6,7 +6,7 @@ class Solution:
         srt_s = sorted(s)
         srt_t = sorted(t)
         
-        if srt_s == srt_t:
-            return True
-        
-        return False
+        for letter in set(s):
+            if s.count(letter) != t.count(letter):
+                return False
+        return True
