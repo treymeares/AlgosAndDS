@@ -1,13 +1,12 @@
-class Solution(object):
-    def isAnagram(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: bool
-        """
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
-        for letter in set(s):
-            if s.count(letter) != t.count(letter):
-                return False
-        return True
+        
+        srt_s = sorted(s)
+        srt_t = sorted(t)
+        
+        if srt_s == srt_t:
+            return True
+        
+        return False
