@@ -1,5 +1,5 @@
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
-        num = int("".join(map(str, digits)))
-        result = num + 1
-        return list(str(result))
+        number = int("".join([str(x) for x in digits]))
+        number += 1
+        return [int(x) for x in str(number)]
