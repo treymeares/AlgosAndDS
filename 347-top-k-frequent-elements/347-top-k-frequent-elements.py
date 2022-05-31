@@ -1,15 +1,9 @@
 from collections import Counter
 from heapq import nlargest
 
-class Solution(object):
-    def topKFrequent(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
-        ct = Counter(nums)
-        k_largest = nlargest(k, ct, key=ct.get)
-        return k_largest
-        
-        
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        franklin = Counter(nums)
+        kNums = nlargest(k, franklin, key = franklin.get)
+        return kNums
