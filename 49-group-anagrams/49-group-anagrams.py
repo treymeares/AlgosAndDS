@@ -1,26 +1,11 @@
-
-class Solution(object):
-    def groupAnagrams(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: List[List[str]]
-        """
-        # seen = {}
-        # for words in strs:
-        #     x = "".join(sorted(words))
-        #     if x not in seen:
-        #         seen[x] = [words]
-        #     else:
-        #         seen[x].append(words)
-        # return list(seen.values())   
-    
-        
-        seen = {}
-        for word in strs:
-            joined = "".join(sorted(word))
-            if joined not in seen:
-                seen[joined] = [word]
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        groups = {}
+        for x in strs:
+            srt = "".join(sorted(x))
+            if srt in groups:
+                groups[srt] += [x]
             else:
-                seen[joined].append(word)
-        return list(seen.values())
-        
+                groups[srt] = [x]
+        print(groups.values())
+        return groups.values()
