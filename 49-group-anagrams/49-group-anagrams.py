@@ -7,5 +7,4 @@ class Solution:
                 groups[srt] += [x]
             else:
                 groups[srt] = [x]
-        print(groups.values())
         return groups.values()
