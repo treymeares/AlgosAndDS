@@ -6,7 +6,8 @@ class Solution:
             if num - 1 not in nums:
                 count = 1
                 while num + 1 in nums:
-                    num += 1
                     count += 1
+                    num += 1
                 long = max(long, count)
         return long
+                
