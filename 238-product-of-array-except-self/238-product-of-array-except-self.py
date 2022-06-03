@@ -8,9 +8,8 @@ class Solution:
             prefix *= nums[x]
         
         postfix = 1
-        for x in range(len(nums) -1, -1, -1):
+        for x in range(len(nums) - 1, -1, -1):
             output[x] *= postfix
             postfix *= nums[x]
         
         return output
-            
